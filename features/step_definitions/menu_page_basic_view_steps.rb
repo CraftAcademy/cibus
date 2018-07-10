@@ -1,3 +1,3 @@
-When("I visit the landing page") do
+When("I visit the menu page") do
     visit root_path
 end

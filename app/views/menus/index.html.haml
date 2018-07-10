@@ -4,3 +4,11 @@
 %h1 Cibus
 %p Welcome to the tasty world of Cibus!
 
+%table 
+%thead Starters
+%tbody 
+- @dishes.each do |dish|
+    %tr
+        %td= dish.name
+        %td= dish.price
+        %td= dish.description

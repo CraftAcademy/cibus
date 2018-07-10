@@ -4,7 +4,7 @@ Feature: View of the menu page
     I would like to see the menu on the landing page
 
     Scenario: menu page basic view
-        When I visit the landing page
+        When I visit the menu page
         Then I should see "Login" link
         And I should see "Signup" link
         And I should see "logo" link
