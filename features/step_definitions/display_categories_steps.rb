@@ -4,6 +4,6 @@ Given("The following dishes exist in the database") do |table|
     end
 end
   
-  Then("I should see {string} in the {string} category") do |string, string2|
-    pending # Write code here that turns the phrase above into concrete actions
+  Then("I should see {string} in the {string} category") do |dish.name, category|
+    expect(page).to have dish.name with: category
   end
