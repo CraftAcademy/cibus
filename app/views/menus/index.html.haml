@@ -5,7 +5,33 @@
 %p Welcome to the tasty world of Cibus!
 
 %table   
-%thead Starters
+%thead 
+- @categories.each do
+    %p 
+    %table
+    %thead
+    %tr
+        %th Name
+        %th Description
+        %th Price
+        %th Currency
+        %th Quantity
+        %tbody
+%table
+- @dishes.each do |dish|
+    %tr
+        %td= dish.name
+        %td= dish.description
+        %td= dish.price
+    %tr    
+        %td SEK
+
+        %td
+            = number_field_tag 'Quantity', nil, min: 1, max: 10, step: 1
+%p 
+
+%table   
+%thead Main Course
 %table
 %thead
 %tr
@@ -27,4 +53,20 @@
         %td
             = number_field_tag 'Quantity', nil, min: 1, max: 10, step: 1
 %p 
-    = link_to 'Order'
+%table   
+%thead Desserts
+%table
+%thead
+%tr
+    %th Name
+    %th Description
+    %th Price
+    %th Currency
+    %th Quantity
+    %tbody
+%table
+- @category.each do |dish|
+    %tr
+        %td= category.title      
+%p 
+    = link_to 'Order', root_path    
