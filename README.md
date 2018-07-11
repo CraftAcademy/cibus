@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# July 9, 2018
+--- general 
+- updated rails to 5.2.0
 
-Things you may want to cover:
+--- code
+- scaffolded rails app
+- cleaned config/application.rb
+- cleaned gen file
 
-* Ruby version
+--- git
+- merged 1st pull request
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
