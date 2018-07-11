@@ -10,9 +10,9 @@ Feature: Display dishes on the menu page
 
     Scenario: Display dishes on the menu page
         When I'm on the menu page
-        Then I should see 'Pasta' in the starters section
-        And I should see '100' in the starters section
-        And I should see 'Very nice' in the starters section
+        Then I should see 'Pasta'
+        And I should see '100'
+        And I should see 'Very nice'
         And I should see currency 'SEK'
         And I should see 'Order' link
-        And I should see 'Quantity' column
+        And I should see 'Quantity'
