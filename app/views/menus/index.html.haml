@@ -7,7 +7,11 @@
 %table
 
 - @categories.each do |category|
-    %td= category.title
+    %h2= category.title
+    - @dishes.each do |dish|
+        %p= category.dish.name
+        %p= category.dish.description
+        %p= category.dish.price
 
 %p 
     = link_to 'Order', root_path
