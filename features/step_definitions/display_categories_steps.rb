@@ -4,8 +4,8 @@ Given("The following dishes exist in the database") do |table|
     end
 end
   
-  Then("I should see {string} in the {string} category") do |dish, category|
-    category.each do |category|
-    
+Given("the following categories exist") do |table|
+    table.hashes.each do |hash|
+        FactoryBot.create(:category, hash)
     end
   end

@@ -9,9 +9,15 @@ Feature: Dish categories displayed on the menu page
     | Pasta		         | 100        | Very nice                               |
     | Cesar Salad      | 80         | Nuritious salad and a perfect starter   |
     | Tiramisu         | 60         | The most known Italian dessert          |
+    And the following categories exist
+    | title        |
+    | Starters     |
+    | Main Courses |
+    | Desserts     |
 
   Scenario: Display categories on the menu page
     When I'm on the menu page
+    And show me the page
     Then I should see 'Cesar Salad' in the 'Starters' category
     And I should see 'Pasta' in the 'Main Dishes' category
     And I should see 'Tiramisu' in the 'Desserts' category
