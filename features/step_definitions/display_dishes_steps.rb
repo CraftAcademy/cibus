@@ -15,3 +15,4 @@ end
 Then("I should see {string} column") do |quantity_form|
     expect(page).to have_content quantity_form
 end
+

@@ -1,0 +1,21 @@
+<% if current_order.errors.any? || @order_item.errors.any? %>
+  alert('You order is not valid!')
+<% else %>
+  var element = document.getElementById('order-details')
+  var checkoutButton = document.getElementById('checkout-link')
+  var message = "<%= pluralize(current_order.order_items.reload.collect(&:quantity).compact.sum, 'item') %>"
+  if (element === null) {
+    element = document.createElement('span');
+    element.className = 'shop-quantity'
+    element.id = 'order-details'
+    element.title = message
+    document.body.insertBefore(element, document.body.firstChild);
+    tippy(element)
+  }
+  if (checkoutButton === null) {
+    reload();
+  }
+  clearNotifications();
+  element.innerHTML = message;
+  element._tippy.popper.querySelector('.tippy-content').textContent = `You have ${message} in your order`
+<% end %>

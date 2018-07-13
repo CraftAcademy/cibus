@@ -1,0 +1,7 @@
+- @dishes.each do |dish|
+    - if dish.category == 'Starters'
+        %p= dish.name
+        %p= dish.description
+        %p= "#{dish.price} SEK"
+        %td
+            = number_field_tag 'Quantity', nil, min: 1, max: 10, step: 1

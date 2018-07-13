@@ -12,6 +12,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'haml-rails', '~> 1.0'
+gem 'cartify', github: 'CraftAcademy/cartify', branch: 'rails_5_2'
+gem 'devise'
 
 group :development, :test do
   gem 'cucumber-rails', require: false
@@ -23,6 +25,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'coveralls', require: false
   gem 'launchy'
+  gem 'chromedriver-helper'
+  gem 'selenium-webdriver'
 end
 
 group :development do

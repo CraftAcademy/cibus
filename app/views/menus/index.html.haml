@@ -1,36 +1,39 @@
 %p
     = link_to 'Login'
     = link_to 'Signup'
+    = shop_icon_quantity
 %h1 Cibus
 %p Welcome to the tasty world of Cibus!
 
-%h3 Main Courses
+%h3 Starters
+%table#Starters
+- @dishes.each do |dish|
+    - if dish.category == 'Starters'
+        %tr= dish.name
+        %td= dish.description
+        %td= "#{dish.price} SEK"
+        %td
+        %span= add_to_cart(dish, quantity, button_name)
+
+
+%table Main Courses
 - @dishes.each do |dish|
     - if dish.category == 'Main Courses'
         %p= dish.name
         %p= dish.description
         %p= "#{dish.price} SEK"
         %td
-            = number_field_tag 'Quantity', nil, min: 1, max: 10, step: 1
-        %p
-            = link_to 'Order'
+            = add_to_cart(dish, qqty = 1, name = 'Add to cart')
+
 %h3 Desserts
+%table#Desserts
 - @dishes.each do |dish|
     - if dish.category == 'Desserts'
         %p= dish.name
         %p= dish.description
         %p= "#{dish.price} SEK"
         %td
-            = number_field_tag 'Quantity', nil, min: 1, max: 10, step: 1
-        %p
-            = link_to 'Order'
-%h3 Starters
-- @dishes.each do |dish|
-    - if dish.category == 'Starters'
-        %p= dish.name
-        %p= dish.description
-        %p= "#{dish.price} SEK"
-        %td
-            = number_field_tag 'Quantity', nil, min: 1, max: 10, step: 1
-        %p
-            = link_to 'Order'
+            = add_to_cart(dish, qqty = 1, name = 'Add to cart')
+%p= link_to 'Proceed to checkout', cartify.checkout_index_path, id: 'checkout-link'
+
+    

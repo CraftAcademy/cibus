@@ -23,6 +23,7 @@ Feature: Display dishes on the menu page
         And I should see currency 'SEK'
         And I should see 'Order' link
         And show me the page
+        And I should see 'Quantity' column
 
     Examples:
         | name          | price | description              | category       |
@@ -32,3 +33,5 @@ Feature: Display dishes on the menu page
         | Pizza         | 100   | Pasta with nutella       | Main Courses   |
         | Sushi         | 200   | Healty Sallad            | Starters       |
         | Chocolate     | 80    | The best italian dessert | Desserts       |
+        
+   
